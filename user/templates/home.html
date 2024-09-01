@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Legalis</title>
+</head>
+<body>
+    <header class="bg-neutral-50 flex p-4 justify-between">
+        <div class="flex items-center gap-20">
+            <h1 class="text-2xl font-bold text-neutral-900">LEGALIS</h1>
+            <nav class="hidden md:flex h-full gap-4">
+                <div class="flex flex-col relative h-full">
+                    <a href="" class="text-cyan-500 font-semibold text-base">Home</a>
+                    <div class="w-full absolute bottom-0 h-1 bg-cyan-500 rounded-full"></div>
+                </div>
+                <div class="flex flex-col relative h-full">
+                    <a href="" class="text-neutral-500 font-semibold text-base">Cursos</a>
+                    <!-- <div class="w-full absolute bottom-0 h-1 bg-cyan-400 rounded-full"></div> -->
+                </div>
+                <div class="flex flex-col relative h-full">
+                    <a href="" class="text-neutral-500 font-semibold text-base">Sobre nós</a>
+                    <!-- <div class="w-full absolute bottom-0 h-1 bg-cyan-400 rounded-full"></div> -->
+                </div>
+                <div class="flex flex-col relative h-full">
+                    <a href="" class="text-neutral-500 font-semibold text-base">Contato</a>
+                    <!-- <div class="w-full absolute bottom-0 h-1 bg-cyan-400 rounded-full"></div> -->
+                </div>
+            </nav>
+        </div>
+        <div class="hidden md:flex gap-4">
+            <a href="" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Entrar</a>
+            <a href="" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Cadastrar</a>
+        </div>
+        <div class="md:hidden">
+            <button onclick="exibir()"><i class="fa-solid fa-bars"></i></button>
+            <div class="hidden absolute top-0 right-0 h-screen w-screen bg-neutral-900/80" id="menu">
+                <div class="flex flex-col gap-4 p-12">
+                    <button onclick="esconder()" class="flex justify-start text-neutral-50"><i class="fa-solid fa-arrow-left"></i></button>
+                    <a href="" class="text-neutral-50 font-semibold text-base">Home</a>
+                    <a href="" class="text-neutral-50 font-semibold text-base">Cursos</a>
+                    <a href="" class="text-neutral-50 font-semibold text-base">Sobre nós</a>
+                    <a href="" class="text-neutral-50 font-semibold text-base">Contato</a>
+                    <div class="flex gap-4">
+                        <a href="" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Entrar</a>
+                        <a href="" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Cadastrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="bg-[url('{% static '/home/fundo.png' %}')] bg-no-repeat bg-center bg-cover h-screen">
+        <section class="bg-neutral-900/40 flex h-screen w-full items-center justify-center">
+            <div class="text-center opacity-100 flex flex-col gap-8">
+                <h1 class="text-4xl font-bold text-neutral-50">Desbloqueie seu potencial</h1>
+                <div class="flex flex-col gap-6">
+                    <p class="text-neutral-50">Aqui você encontra os melhores cursos de direito do mercado.</p>
+                    <div><a href="" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-8 py-2 font-semibold rounded-lg">Começar agora</a></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function exibir() {
+            let menu = document.querySelector('#menu')
+            menu.classList.remove('hidden')
+            menu.classList.add('flex')
+        }
+
+        function esconder() {
+            let menu = document.querySelector('#menu')
+            menu.classList.remove('flex')
+            menu.classList.add('hidden')
+        }
+    </script>
+</body>
+</html>
