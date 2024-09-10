@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'user'
+    'user',
+    'courses',
 ]
 
 MIDDLEWARE = [
@@ -119,13 +120,29 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Login
+LOGOUT_REDIRECT_URL = 'user:login'
+LOGIN_REDIRECT_URL = 'courses:home'
+
+#Messages
+
+from django.contrib.messages import constants
+
+MESSAGE_TAGS = {
+    # constants.DEBUG: '',
+    constants.ERROR: 'red-300',
+    constants.WARNING: 'yellow-300',
+    constants.SUCCESS: 'green-300',
+    # constants.INFO: 'alert-info ',
+}

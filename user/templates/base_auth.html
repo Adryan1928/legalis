@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Legalis</title>
+</head>
+<body>
+    <main class="bg-[url('{% static '/home/fundo.png' %}')] bg-no-repeat bg-center bg-cover flex justify-center items-center {% if not height %} h-screen {% endif %} {{ height }}">
+        <article class="bg-neutral-900/40 flex {% if not height %} h-screen {% endif %} {{ height }} w-full items-center justify-center">
+            <section class="w-full h-full sm:h-auto sm:w-3/4 lg:w-1/2 bg-neutral-50 sm:rounded-lg py-10 my-10">
+                {% if messages %}
+                <div class="flex justify-center items-center gap-4 w-full mb-8">
+                    {% for message in messages %}
+                    <div class="bg-{{ message.tags }}/30 border border-{{ message.tags }} text-neutral-900 p-2 rounded w-3/4">{{ message }}</div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <div class="flex justify-center items-center pb-6">
+                    <h1 class="text-neutral-900 text-3xl font-bold">{% block title %}{% endblock %}</h1>
+                </div>
+                <form action="." method="post" class="flex flex-col justify-center items-center gap-6 h-full" autocomplete="off"> {% csrf_token %}
+                    {% block content %}
+                    {% endblock %}
+                </form>
+            </section>
+        </article>
+    </main>
+</body>
+</html>

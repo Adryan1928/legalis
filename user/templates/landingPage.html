@@ -32,8 +32,8 @@
             </nav>
         </div>
         <div class="hidden md:flex gap-4">
-            <a href="{% url 'login' %}" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Entrar</a>
-            <a href="" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Cadastrar</a>
+            <a href="{% url 'user:login' %}" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Entrar</a>
+            <a href="{% url 'user:register' %}" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Cadastrar</a>
         </div>
         <div class="md:hidden">
             <button onclick="exibir()"><i class="fa-solid fa-bars"></i></button>
@@ -45,8 +45,8 @@
                     <a href="" class="text-neutral-50 font-semibold text-base">Sobre nós</a>
                     <a href="" class="text-neutral-50 font-semibold text-base">Contato</a>
                     <div class="flex gap-4">
-                        <a href="{% url 'login' %}" onclick="esconder()" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Entrar</a>
-                        <a href="" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Cadastrar</a>
+                        <a href="{% url 'user:login' %}" onclick="esconder()" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Entrar</a>
+                        <a href="{% url 'user:register' %}" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-4 py-1 font-semibold rounded-lg">Cadastrar</a>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                 <h1 class="text-4xl font-bold text-neutral-50">Desbloqueie seu potencial</h1>
                 <div class="flex flex-col gap-6">
                     <p class="text-neutral-50">Aqui você encontra os melhores cursos de direito do mercado.</p>
-                    <div><a href="" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-8 py-2 font-semibold rounded-lg">Começar agora</a></div>
+                    <div><a href="{% url 'user:login' %}" class="bg-cyan-500 hover:bg-cyan-400 duration-300 text-neutral-50 px-8 py-2 font-semibold rounded-lg">Começar agora</a></div>
                 </div>
             </div>
         </section>
