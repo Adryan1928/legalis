@@ -41,7 +41,7 @@ def register(request):
         if user_form.is_valid() and client_form.is_valid():
             user = User.objects.create_user(**user_form.cleaned_data, username=user_form.cleaned_data['email'])
             client = client_form.save(commit=False)
-            print(client.profile_photo)
+            client.profile_photo = request.FILES.get('profile_photo')
             client.user = user
             client.save()
 

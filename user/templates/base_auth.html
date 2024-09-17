@@ -21,7 +21,7 @@
                 <div class="flex justify-center items-center pb-6">
                     <h1 class="text-neutral-900 text-3xl font-bold">{% block title %}{% endblock %}</h1>
                 </div>
-                <form action="." method="post" class="flex flex-col justify-center items-center gap-6 h-full" autocomplete="off"> {% csrf_token %}
+                <form action="." method="post" class="flex flex-col justify-center items-center gap-6 h-full" autocomplete="off" enctype="multipart/form-data"> {% csrf_token %}
                     {% block content %}
                     {% endblock %}
                 </form>
