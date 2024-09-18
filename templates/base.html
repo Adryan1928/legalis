@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Legalis</title>
 </head>
 <body>
     <header>{% block header %}{% endblock %}</header>
-    <main>{% block content %}{% endblock %}</main>
+    <main>
+        <section class="fixed h-screen px-4 py-8 w-1/12">
+            <ul class="flex flex-col items-center gap-4">
+                <!-- Trocar por uma logo -->
+                <li class="text-2xl font-bold text-neutral-900 mb-8">LOGO</li>
+                <li><i class="fa-solid fa-house text-neutral-500 text-xl"></i></li>
+                <li><i class="fa-solid fa-user-graduate text-neutral-500 text-xl"></i></li>
+            </ul>
+        </section>
+
+        <section class="bg-neutral-100 w-10/12 m-auto h-screen">{% block content %}{% endblock %}</section>
+
+        <section class="fixed h-screen px-4 py-8 w-1/12 right-0 top-0">
+            <ul class="flex flex-col items-center gap-8">
+                <li class="p-px bg-cyan-400 rounded-full "><img src="/media/{{ user.client.profile_photo }}" alt="" class=" w-16 h-16 rounded-full"></li>
+                <li class="w-3/4 h-px bg-neutral-300"></li>
+                <li><i class="fa-solid fa-phone text-neutral-500 text-xl"></i></li>
+                <li><i class="fa-solid fa-info-circle text-neutral-500 text-xl"></i></li>
+            </ul>
+        </section>
+    </main>
     <footer></footer>
 </body>
 </html>
