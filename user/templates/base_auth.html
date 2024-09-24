@@ -10,7 +10,7 @@
 <body>
     <main class="bg-[url('{% static '/home/fundo.png' %}')] bg-no-repeat bg-center bg-cover flex justify-center items-center {% if not height %} h-screen {% endif %} {{ height }}">
         <article class="bg-neutral-900/40 flex {% if not height %} h-screen {% endif %} {{ height }} w-full items-center justify-center">
-            <section class="w-full h-full sm:h-auto sm:w-3/4 lg:w-1/2 bg-neutral-50 sm:rounded-lg py-10 my-10">
+            <section class="w-full h-full sm:h-auto sm:w-3/4 lg:w-1/2 bg-neutral-50 sm:rounded-lg py-10 sm:my-10">
                 {% if messages %}
                 <div class="flex justify-center items-center gap-4 w-full mb-8">
                     {% for message in messages %}
